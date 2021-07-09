@@ -23,17 +23,10 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Extract metadata for docker
-      id: meta
-      uses: docker/metadata-action@v3
-      with:
-        images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-
     - name: Build and push
       id: docker_build
       uses: docker/build-push-action@v2
       with:
         context: .
         push: true
-        tags: ${{ steps.meta.outputs.tags }}
-        labels: ${{ steps.meta.outputs.labels }}
+        tags: ghcr.io/${{ github.repository }}
