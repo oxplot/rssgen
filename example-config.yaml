@@ -1,0 +1,10 @@
+listen: 127.0.0.1:7799
+feeds:
+  not-a-tesla-app:
+    title: Not a Tesla App
+    link: https://www.notateslaapp.com/
+    spec:
+      item: article.index-news-mod
+      title: h1 > a
+      description: p.news-description
+      link: h1 > a
