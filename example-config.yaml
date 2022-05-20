@@ -1,6 +1,6 @@
 listen: 127.0.0.1:7799
 feeds:
-  not-a-tesla-app:
+  not-a-tesla-app: # available at http://127.0.0.1:7799/feeds/not-a-tesla-app
     title: Not a Tesla App
     link: https://www.notateslaapp.com/
     spec:
