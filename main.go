@@ -11,8 +11,6 @@ import (
 	"github.com/PuerkitoBio/goquery"
 	"github.com/gorilla/feeds"
 	"gopkg.in/yaml.v3"
-
-
 )
 
 type FeedSpec struct {
@@ -76,7 +74,7 @@ func handleFeeds(w http.ResponseWriter, r *http.Request) {
 	doc, err := goquery.NewDocumentFromReader(res.Body)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
-		log.Printf("error parsing the feed %s: %s", err)
+		log.Printf("error parsing the feed %s: %s", id, err)
 		return
 	}
 
@@ -90,7 +88,7 @@ func handleFeeds(w http.ResponseWriter, r *http.Request) {
 	base, err := url.Parse(feedSpec.Link)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
-		log.Printf("error parsing the feed %s: %s", err)
+		log.Printf("error parsing the feed %s: %s", id, err)
 		return
 	}
 
