@@ -1,4 +1,4 @@
-FROM golang:1.16-buster
+FROM golang:1.26-trixie
 
 RUN mkdir -p /app
 WORKDIR /app
